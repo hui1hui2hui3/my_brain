@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "f04fcf2ff6af16c2",
+        "id": "1f42db32e7627317",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -82,17 +82,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f04fcf2ff6af16c2",
+  "active": "1f42db32e7627317",
   "lastOpenFiles": [
-    "技术/APP测试.md",
-    "业务/512考试教育网.md",
-    "业务/常熟重点人群慢病管理.md",
-    "业务/床旁智能交互系统.md",
-    "业务/家庭医生.md",
-    "业务/南京照护系统.md",
-    "业务/重点人群健康管理.md",
-    "生活/红烧鲫鱼.md",
     "生活/菜谱.md",
-    "生活/鲫鱼豆腐汤.md"
+    "技术/Python.md",
+    "技术/Python测试框架.md",
+    "技术/pytest.md",
+    "技术/Jmeter.md",
+    "技术/Jenkins.md",
+    "技术/Java.md",
+    "技术/Docker.md",
+    "技术/测试/测试右移.md",
+    "技术/测试/安全测试.md"
   ]
 }

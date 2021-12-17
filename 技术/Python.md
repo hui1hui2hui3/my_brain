@@ -109,11 +109,103 @@ with MyOpen(path,'r') as f:
 	> 退出上下文
 
 ## 对象内置方法剖析
-- `__new__`
-- `__init__`
-- `__call__` ^764744
-- `__enter__`
-- `__exit__`
+- `__new__`:方法，创建类实例，最优先执行；是静态方法
+**原理**：
+> python创建对象的底层方法，比init优先执行;
+> 如果重写__new__后，且返回值不是当前类或器子类，则不再执行init方法
+
+**注意1**：new的参数为cls而不是self
+**注意2**：new如果返回为子类是，则真实对象为其子类，方法也是调用子类中的方法
+```
+class Father():  
+    pass
+class Test(Father):  
+    def __init__(self):  
+        print("init")  
+  
+    def __new__(cls):  
+        print("new")  
+        return object.__new__(Other)  #会执行init
+		#return object.__new__(Test)  #会执行init
+		#return object.__new__(Father )   #不会执行init
+		#return None   #不会执行init
+		#没有返回值      #不会执行init
+  
+class Other(Test):  
+    pass  
+  
+t = Test()
+```
+**什么时候重写new？**
+> 当为了防止一个类被init初始化时
+- `__init__`：方法，创建类实例，new之后执行
+对象初始化，比new晚执行，当new执行完毕时，如果返回的当前对象或子类，则会调用执行，否则不执行
+- `__call__` ：方法,表明对象是否为callable对象
+
+> 重写该方法可以是对象变为一个Callable对象，可以像函数一样执行调用
+> 所有callable都一定有__call__，所以可以根据是否有__call__判断，对象内的属性是否为函数
+```
+class CallObj():
+	def __call__(self,name):
+		print(name)
+		
+call_obj = CallObj()
+call_obj("haha")  #可以像函数一样调用
+call_obj.__call__("haha") #也可以这样调用
+
+def test():
+	print("test")
+	
+test.__call__()  #函数也可以这样调用
+```
+- `__enter__`：方法
+- `__exit__`：方法
+- `__repr__`：方法，print打印时调用的方法
+重写后，可以实现对象打印后想要呈现的内容
+```
+class Test():
+	def __repr__(self):
+		return "haha"
+t = Test()
+print(t) #haha
+```
+- `__del__`: 方法，对象销毁时调用，和init相反
+> 正常情况下，python会自动垃圾回收，但有时可以手动释放对象控件
+> 当对象索引为0时，python就会回收该对象；del方法就是删除索引的，索引-1
+
+```
+class Father():
+	def __del__(self):
+		print("del father")
+
+class Son(Father):
+	def __del__(self):
+		print("del son")
+		super().__del__() #如果不调用父类，则不会继承父类的部分不会销毁掉
+		
+s = Son()  #对象创建时，Son索引为1
+# s1 = s    #如果这里有赋值，则索引为2，此时del s就会使索引-1，但因为不为0，不触发销毁
+del s   #销毁对象索引 ，Son索引为0，会触发__del__函数
+```
+- `__dir__`: 方法，查询对象内部所有属性
+**注意**：
+	常用的是dir();  dir方法会对内部属性进行排序
+	`__dir__`的方法必须要传实例，如果传的是类可能得不到你期望的内容，此时要用dir
+> 混淆概念
+> 实例.__dir__() == dir(实例)
+> 类.__dir__(类) != dir(类)   #注意这里
+> 类.__dir__(实例) == dir(实例)
+> 实例.__dir__() == dir(类)
+```
+class Father():
+	def test():
+		pass
+
+f = Father()
+# dir(f) == dir(Father) == f.__dir__() == Father.__dir__(f) != Father.__dir__(Father) 这里的==不是真实的，以为list顺序是不一样的，这里只是用来比喻
+
+```
+
 
 ## 部分语法深剖
 - `with...as..`
