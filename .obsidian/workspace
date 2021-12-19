@@ -1,14 +1,17 @@
 {
   "main": {
-    "id": "09f6d3ecb5fd0af9",
+    "id": "594aa544ca0a5fe6",
     "type": "split",
     "children": [
       {
-        "id": "1f42db32e7627317",
+        "id": "460a3c2f6fec0727",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "技术/Python.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "技术/Python.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -82,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "1f42db32e7627317",
+  "active": "460a3c2f6fec0727",
   "lastOpenFiles": [
-    "生活/菜谱.md",
     "技术/Python.md",
+    "技术/Vue.md",
+    "生活/菜谱.md",
     "技术/Python测试框架.md",
     "技术/pytest.md",
     "技术/Jmeter.md",
     "技术/Jenkins.md",
     "技术/Java.md",
     "技术/Docker.md",
-    "技术/测试/测试右移.md",
-    "技术/测试/安全测试.md"
+    "技术/测试/测试右移.md"
   ]
 }

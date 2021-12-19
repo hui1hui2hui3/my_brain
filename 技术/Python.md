@@ -3,9 +3,46 @@ tag: ["Python"]
 ---
 
 ## 高阶函数
-- map
-- reduce
-- filter
+- **map**：对所有可迭代对象的每个元素，执行函数
+> 生成器 = map(函数，可迭代对象)
+> 函数可以使用lambda表达式
+
+```
+def mypow(x):
+	return x**2
+map(mypow,[1,2,3])
+map(lambda x:x**2,[1,2,3])
+map(lambda x,y:x+y,[1,2,3],[4,5,6]) #分别想加
+```
+- **reduce**: 对可迭代对象相邻的2个元素，执行函数
+> 结果值 = reduce(函数，可迭代对象)
+```
+def add(x,y):
+	return x+y
+reduce(add,[1,2,3])
+reduce(lambda x,y:x+y, [1,2,3]) #6 总和想加
+```
+- **filter**: 对可迭代对象的每个元素，执行函数确定过滤
+> 生成器 = filter(函数，可迭代对象)
+```
+def odd(x):
+	return x%2==0
+filter(odd,[1,2,3])
+filter(lambda x:x%2==0,[1,2,3])
+```
+
+## 推导式
+**核心语句**：[映射表达式 for value in iterable if 过滤表达式]
+正例：简单语句，一个for，方便理解阅读
+```
+[x for x in list if x%2=0]
+[fun(x) for x in gen_iter() if filter_test(x)]
+```
+
+反例：多个for语句，难理解
+```
+[x,y for x in xlist if x/2=0 for y in ylist if y%2=0]
+```
 
 ## 生成器
 - yield
@@ -213,4 +250,10 @@ f = Father()
 -- with进入上下文
 -- as返回上下文中`__enter__`返回的对象，如无as语句，则不处理`__enter__`的返回对象
 - `try...except...else...finally`
+**try**: 捕获异常代码块，应尽量精简
+**except**: 异常处理代码块，应指定捕捉的异常，否则不应直接使用，防止因此真实的bug
+**else**: 非异常时执行的代码块，必须和except同时使用。和try作用域相同，可以直接使用内部变量；且会在finally之前执行；目的是为了精简try代码块，防止冗余；
+**finally**: 最终处理模块，不管前面结果如何，都会执行
+
+
 
