@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "技术/Python.md",
+            "file": "技术/测试/需求质量.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术/Python.md",
+                "file": "技术/测试/需求质量.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "460a3c2f6fec0727",
   "lastOpenFiles": [
+    "技术/测试/需求质量.md",
+    "技术/测试/测试左移.md",
+    "思维/学习技术.md",
+    "思维/关联.md",
+    "思维/认知体系.md",
+    "技术/测试/测试用例.md",
+    "技术/测试/功能测试.md",
+    "技术/测试/测试基础.md",
     "技术/Python.md",
-    "技术/Vue.md",
-    "生活/菜谱.md",
-    "技术/Python测试框架.md",
-    "技术/pytest.md",
-    "技术/Jmeter.md",
-    "技术/Jenkins.md",
-    "技术/Java.md",
-    "技术/Docker.md",
-    "技术/测试/测试右移.md"
+    "技术/Vue.md"
   ]
 }
