@@ -31,6 +31,8 @@ class LoginPage(BasePage):
 ```
 
 解释：**为什么要把loc放到Page的顶部，因为这个可以快速判断当前页面的元素是否正确或是否有遗漏；还有一种写法是把所有loc全部抽取出去放到一个文件夹下，方便维护**
+	1. **元素定位扩展**：为了方便元素定位的可维护性
+	> 可以把元素定位放到单独的文件中，比如yaml或ini文件中配置，页面识别元素和定位器；然后定义公共读取方法，方便使用
 - 逻辑层
 > 对单个页面的元素基本操作进行封装，有时可以和组件层合并到一层
 
@@ -44,6 +46,11 @@ class LoginLogic(object):
 		LoginPage.input_pawd(driver,pawd)
 		LoginPage.login(driver)
 ```
+
+
+1. 基于[[pytest]]进行扩展可以简写参数传递：主要是driver注入
+> 可以再系统根目录，定义conftest.py，内部初始化driver以后，在该层可以直接注入使用，而无需上层在多次传递
+
 - 业务层
 > 对一整套业务流程进行封装
 
@@ -68,6 +75,10 @@ class TestLoginPage(object):
 		LoginBusiness.login(driver,"name","pqwd")
 
 ```
+
+- 全局配置
+> 为了全局配置一些比如路径，变量等数据，建立全局配置；一般是conf.py（这里放不需要动态改变的配置），以及conf.ini（这里防止一些需要动态改变的配置）
+
 
 ## 框架扩展
 ### 基于[[OpenCV]]实现图像识别的页面操作
