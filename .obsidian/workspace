@@ -7,11 +7,8 @@
         "id": "41f59336e75674c6",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "技术/UI自动化测试-Python+Selenium.md",
-            "mode": "source"
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技术/UI自动化测试-Python+Selenium.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +84,15 @@
   },
   "active": "41f59336e75674c6",
   "lastOpenFiles": [
-    "技术/UI自动化测试-Python+Selenium.md",
-    "技术/接口自动化框架--Java+Jmeter.md",
-    "技术/异步IO.md",
-    "技术/Docker.md",
-    "技术/Java.md",
-    "技术/Jenkins.md",
-    "技术/Jmeter.md",
-    "技术/pytest.md",
-    "业务/家庭医生.md",
-    "业务/南京照护系统.md"
+    "生活/如何处理鲫鱼.md",
+    "生活/鲫鱼豆腐汤.md",
+    "生活/红烧鲫鱼.md",
+    "生活/菜谱.md",
+    "技术/接口测试.md",
+    "技术/Scoop.md",
+    "技术/打造个人工作站.md",
+    "思维/靠谱.md",
+    "思维/学习技术.md",
+    "技术/数据库.md"
   ]
 }
